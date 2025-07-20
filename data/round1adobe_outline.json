@@ -1,0 +1,1857 @@
+[
+    {
+        "text": "Welcome to the",
+        "level": 1,
+        "font_size": 20.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "“Connecting the Dots” Challenge",
+        "level": 1,
+        "font_size": 20.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Rethink Reading. Rediscover Knowledge",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "What if every time you opened a PDF, it didn’t just",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "sit there",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "—it",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "spoke to you",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ",",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "connected ideas",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ", and",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "narrated meaning",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "across your entire library?",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "That’s the future we’re building — and we want",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "you",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "In the",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Connecting the Dots Challenge",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ", your mission is to reimagine the humble",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "PDF as an intelligent, interactive experience—one that",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "understands structure",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ",",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "surfaces insights",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ", and responds",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "to you",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "The Journey Ahead",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Round 1:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Kick things off by building the brains — extract structured outlines from",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "raw PDFs with blazing speed and pinpoint accuracy. Then, power it up",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "with on-device intelligence that understands sections and links related",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Round 2:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "It’s showtime! Build a beautiful, intuitive reading webapp using Adobe’s",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "PDF Embed API. You will be using your Round 1 work to design a",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Why This Matters",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "In a world flooded with documents, what wins is not more content — it’s",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "context",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ". You’re not just building tools — you’re building the future of how we",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "read, learn, and connect",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ". No matter your background — ML hacker, UI builder,",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Are you in?",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "It’s time to read between the lines. Connect the dots. And build a PDF",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "experience that feels like",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "magic",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Round 1A: Understand Your Document",
+        "level": 1,
+        "font_size": 20.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Challenge Theme: Connecting the Dots Through Docs",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Your Mission",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "You're handed a PDF — but instead of simply reading it, you're tasked with",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "making sense of it like a machine would. Your job is to extract a structured",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "outline of the document — essentially the",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Title",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ", and headings like",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "H1",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ",",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "H2",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ", and",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "H3",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "This outline will be the",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "foundation",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Why This Matters",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "PDFs are everywhere — but machines don’t naturally understand their",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "structure. By building an outline extractor, you’re enabling smarter document",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "experiences, like semantic search, recommendation systems, and insight",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "What You Need to Build",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "You must build a solution that:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Accepts a",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "PDF file",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "(up to 50 pages)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Extracts:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Title",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Headings:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "H1, H2, H3 (with level and page number)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Outputs a valid JSON file in the format below:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "{",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "\"title\": \"Understanding AI\",",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "\"outline\": [",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "{ \"level\": \"H1\", \"text\": \"Introduction\", \"page\": 1 },",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "{ \"level\": \"H2\", \"text\": \"What is AI?\", \"page\": 2 },",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "{ \"level\": \"H3\", \"text\": \"History of AI\", \"page\": 3 }",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "]",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "}",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "You Will Be Provided",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "A",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "sample input PDF",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "(e.g., sample.pdf)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "A",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "sample ground truth output",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "(sample.json) for format clarity",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Sample Dockerfile",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Sample Solution",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Docker Requirements",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Please ensure your Dockerfile is compatible with AMD64",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "architecture. Since we will build and run the image on an AMD64",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "machine, your base image and any dependencies should support",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "linux/amd64. Optionally, you can include the following in your",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Dockerfile to explicitly specify the platform: FROM --",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "platform=linux/amd64 <base_image>",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "CPU architecture:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "amd64 (x86_64)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "No GPU dependencies",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Model size (if used) ≤ 200MB",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Should work offline — no network/internet calls",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Expected Execution",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "We will build the docker image using the following command:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "```docker build --platform linux/amd64 -t",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "mysolutionname:somerandomidentifier```",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "After building the image, we will run the solution using the run command",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "```docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "network none mysolutionname:somerandomidentifier```",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Your container should:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Automatically process all PDFs from /app/input directory,",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "generating a corresponding filename.json in /app/output for each",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "filename.pdf",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "output.json",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Constraints",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Constraint",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Requirement",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Execution",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "time",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "≤ 10 seconds for a 50-page",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "PDF",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Model size  ≤ 200MB (if used)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Network",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "No internet access",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "allowed",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Runtime",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Must run on CPU (amd64),",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "your solution should run on",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "the system with 8 CPUs and",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "16 GB RAM configurations",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Scoring Criteria",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Criteria",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Max",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Points",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Heading Detection Accuracy (Precision +",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Recall)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "25",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Performance (Time & Size Compliance)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "10",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Bonus: Multilingual Handling (e.g.,",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Japanese)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "10",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Total",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "45",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Submission Checklist",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Git Project with a working Dockerfile in the root director and",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "A working",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Dockerfile",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "All dependencies installed within the container",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "A README.md that explains:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Your approach",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Any models or libraries used",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "How to build and run your solution (This is purely for",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "documentation purpose, your solution should run using the",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Pro Tips",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Don’t rely solely on font sizes for heading level determination —",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Make your code modular — you’ll reuse this structure in Round",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Important – Please keep your Git Repo private till the competition",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "What Not to Do",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Do not hardcode headings or file-specific logic",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Do not make API or web calls",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Do not exceed the runtime/model size constraints",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "[[Public Dataset Folder]]",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "(For Sample Input and Output Files, please refer to the appendix)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Round 1B: Persona-Driven Document Intelligence",
+        "level": 1,
+        "font_size": 20.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Theme:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "“Connect What Matters — For the User Who Matters”",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Challenge Brief (For Participants)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "You will build a system that acts as an intelligent document analyst, extracting",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "and prioritizing the most relevant sections from a collection of documents based",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Input Specification",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Document Collection",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": 3-10 related PDFs",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Persona Definition",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": Role",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "description with specific expertise and focus areas",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Job-to-be-Done",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": Concrete task the persona needs to accomplish",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Document collection, persona and job-to-be-done can be very diverse. So, the",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "solution that teams need to build needs to be generic to generalize to this",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Documents can be from any domain (Example: Research papers,",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "school/college books, financial reports, news articles etc.)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Persona can again be very diverse (Example: Researcher, Student,",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Salesperson, Journalist, Entrepreneur etc)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Job-to-be-done: This will be related to the persona (Example:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Provide a literature review for a given topic and available research",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "papers, What should I study for Organic Chemistry given the",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "chemistry documents, Summarize the financials of corporation xyz",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "given the detailed year end financial reports etc.)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Sample Test Cases",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Test Case 1: Academic Research",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Documents",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": 4 research papers on \"Graph Neural Networks for",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Drug Discovery\"",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Persona",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": PhD Researcher in Computational Biology",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Job",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": \"Prepare a comprehensive literature review focusing on",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "methodologies, datasets, and performance benchmarks\"",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Test Case 2: Business Analysis",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Documents",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": 3 annual reports from competing tech companies",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "(2022-2024)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Persona",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": Investment Analyst",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Job",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": \"Analyze revenue trends, R&D investments, and market",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "positioning strategies\"",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Test Case 3: Educational Content",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Documents",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": 5 chapters from organic chemistry textbooks",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Persona",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": Undergraduate Chemistry Student",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Job",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": ": \"Identify key concepts and mechanisms for exam preparation",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "on reaction kinetics\"",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Required Output",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Output JSON format: Refer",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "challenge1b_output.json",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "The output should contain:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Metadata:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Input documents",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Persona",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Job to be done",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Processing timestamp",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Extracted Section:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Document",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Page number",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Section title",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Importance_rank",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Sub-section Analysis:",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Document",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Refined Text",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Page Number",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Constraints",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Must run",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "on CPU",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "only",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Model size",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "≤ 1GB",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Processing time ≤ 60",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "seconds",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "for document collection (3-5",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "documents)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "No internet access",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "allowed during execution",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Deliverables",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "approach_explanation.md (300-500 words explaining",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "methodology)",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Dockerfile and execution instructions",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Sample input/output for testing",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Scoring Criteria",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Criteria",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Max",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Points",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Description",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Section Relevance",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "60",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "How well selected sections match",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "persona + job requirements with",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "proper stack ranking",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Sub-Section Relevance",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "40",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Quality of granular subsection",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "extraction and ranking",
+        "level": 2,
+        "font_size": 14.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Appendix:",
+        "level": 1,
+        "font_size": 20.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "https://github.com/jhaaj08/Adobe-India-",
+        "level": 1,
+        "font_size": 20.0,
+        "font_name": "",
+        "page_num": 0
+    },
+    {
+        "text": "Hackathon25.git",
+        "level": 1,
+        "font_size": 20.0,
+        "font_name": "",
+        "page_num": 0
+    }
+]
