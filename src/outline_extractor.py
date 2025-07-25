@@ -1,39 +1,150 @@
-from .pdf_parser import PDFParser
-from .feature_extractor import FeatureExtractor
-from .heading_detector import HeadingDetector
-from .data_structures import Heading
-from typing import List
+# FILE: src/outline_extractor.py (FINAL, PRECISION-FOCUSED VERSION)
+
+import fitz
+import re
+from collections import Counter
+import statistics
 
 class OutlineExtractor:
-    """Extracts the outline from a PDF file."""
+    """
+    Extracts a structured outline using a robust, multi-pass heuristic engine
+    designed for high precision and accurate multi-line heading detection.
+    """
 
-    def __init__(self):
-        self.parser = PDFParser()
-        self.feature_extractor = FeatureExtractor()
-        self.heading_detector = HeadingDetector()
+    def _get_all_lines(self, doc: fitz.Document):
+        """Extracts and groups all text into consolidated lines for the entire document."""
+        all_lines = []
+        for page_num, page in enumerate(doc):
+            spans = []
+            for block in page.get_text("dict").get("blocks", []):
+                if "lines" in block:
+                    for line in block["lines"]:
+                        for span in line["spans"]:
+                            if span.get("text", "").strip():
+                                spans.append(span)
+            
+            if not spans: continue
+            spans.sort(key=lambda s: (s['bbox'][1], s['bbox'][0]))
 
-    def extract_outline(self, pdf_path: str) -> List[dict]:
-        """
-        The main method to extract the hierarchical outline.
+            grouped_lines_spans = []
+            if spans:
+                current_line = [spans[0]]
+                for i in range(1, len(spans)):
+                    prev_span, current_span = current_line[-1], spans[i]
+                    if abs(((prev_span['bbox'][1] + prev_span['bbox'][3]) / 2) - \
+                           ((current_span['bbox'][1] + current_span['bbox'][3]) / 2)) < 2:
+                        current_line.append(current_span)
+                    else:
+                        grouped_lines_spans.append(sorted(current_line, key=lambda s: s['bbox'][0]))
+                        current_line = [current_span]
+                grouped_lines_spans.append(sorted(current_line, key=lambda s: s['bbox'][0]))
 
-        Args:
-            pdf_path: The path to the PDF file.
+            page_height = page.rect.height
+            for line_spans in grouped_lines_spans:
+                line_props = self._get_line_properties(line_spans, page_num, page_height)
+                if line_props:
+                    all_lines.append(line_props)
+        return all_lines
 
-        Returns:
-            A list of dictionaries representing the outline.
-        """
-        text_blocks = self.parser.parse(pdf_path)
-        features_df = self.feature_extractor.extract_features(text_blocks)
-        headings_df = self.heading_detector.detect(features_df)
+    def _get_line_properties(self, spans: list, page_num: int, page_height: float):
+        """Consolidates properties for a line from its constituent spans."""
+        text = " ".join(s['text'] for s in spans).strip()
+        if not text: return None
 
-        outline = []
-        for index, row in headings_df[headings_df['is_heading']].iterrows():
-            outline.append(Heading(
-                text=row['text'],
-                level=int(row['heading_level']),
-                font_size=row['font_size'],
-                font_name='', # You can enhance pdf_parser to get this
-                page_num=0 # You can enhance pdf_parser to get this
-            ).__dict__)
+        bbox = fitz.Rect(spans[0]['bbox'])
+        for s in spans[1:]:
+            bbox.include_rect(s['bbox'])
+        
+        font_sizes = [s['size'] for s in spans]
+        font_names = [s['font'] for s in spans]
+        
+        return {
+            "text": text,
+            "bbox": tuple(bbox),
+            "page_num": page_num,
+            "font_size": statistics.mode(font_sizes) if font_sizes else 0,
+            "font_name": statistics.mode(font_names) if font_names else "",
+            "is_bold": "bold" in (statistics.mode(font_names) if font_names else "").lower() or \
+                       "black" in (statistics.mode(font_names) if font_names else "").lower(),
+            "is_header_footer": bbox.y0 < page_height * 0.1 or bbox.y1 > page_height * 0.92
+        }
 
-        return outline
+    def extract_outline(self, pdf_path: str):
+        try:
+            doc = fitz.open(pdf_path)
+        except Exception as e:
+            print(f"Error opening or processing PDF file: {e}")
+            return None, None
+
+        if doc.page_count > 50:
+            print(f"ERROR: Document has {doc.page_count} pages, which exceeds the 50-page limit. Aborting.")
+            return None, None
+        
+        all_lines = self._get_all_lines(doc)
+        if not all_lines: return "Untitled Document", []
+
+        # Find Title
+        first_page_lines = [line for line in all_lines if line['page_num'] == 0 and not line['is_header_footer']]
+        title_text = "Untitled Document"
+        title_lines = []
+        if first_page_lines:
+            max_font_size = max(line['font_size'] for line in first_page_lines) if first_page_lines else 0
+            title_lines = [line for line in first_page_lines if line['font_size'] >= max_font_size * 0.9]
+            title_text = " ".join(line['text'] for line in sorted(title_lines, key=lambda l: l['bbox'][1]))
+
+        # Calculate median font size for body text
+        font_sizes = [line['font_size'] for line in all_lines if not line['is_header_footer'] and line not in title_lines]
+        median_font_size = statistics.median(font_sizes) if font_sizes else 12
+
+        # Identify heading candidates
+        headings = []
+        numbering_pattern = re.compile(r'^\s*(\d+(\.\d+)*|[A-Z]\.|\([a-z]\)|[IVXLCDM]+\.)\s*')
+        for i, line in enumerate(all_lines):
+            if line in title_lines or line['is_header_footer']:
+                continue
+
+            size_ratio = line['font_size'] / median_font_size if median_font_size > 0 else 1
+            is_numbered = numbering_pattern.match(line['text'])
+            
+            # A line is a heading candidate if it's bold, numbered, or significantly larger
+            if line['is_bold'] or is_numbered or size_ratio > 1.2:
+                headings.append(line)
+
+        # Merge multi-line headings
+        merged_headings = []
+        i = 0
+        while i < len(headings):
+            current_heading = headings[i].copy()
+            j = i + 1
+            # Look ahead to merge
+            while j < len(headings):
+                next_heading = headings[j]
+                # If next line is stylistically similar and very close vertically, merge it
+                if (abs(next_heading['font_size'] - current_heading['font_size']) < 1 and
+                    next_heading['is_bold'] == current_heading['is_bold'] and
+                    (next_heading['bbox'][1] - current_heading['bbox'][3]) < current_heading['font_size'] * 0.5):
+                    current_heading['text'] += " " + next_heading['text']
+                    current_heading['bbox'] = tuple(fitz.Rect(current_heading['bbox']).include_rect(next_heading['bbox']))
+                    j += 1
+                else:
+                    break
+            merged_headings.append(current_heading)
+            i = j
+            
+        if not merged_headings: return title_text, []
+
+        # Cluster headings by style to assign levels
+        styles = {}
+        for h in merged_headings:
+            style_key = (round(h["font_size"]), h["is_bold"])
+            if style_key not in styles: styles[style_key] = []
+            styles[style_key].append(h)
+        
+        sorted_styles = sorted(styles.keys(), key=lambda x: (x[0], x[1]), reverse=True)
+        level_map = {style: i + 1 for i, style in enumerate(sorted_styles)}
+
+        for h in merged_headings:
+            style_key = (round(h["font_size"]), h["is_bold"])
+            h['level'] = level_map.get(style_key, 99)
+
+        return title_text, [h for h in merged_headings if h['level'] <= 5]
