@@ -3,18 +3,7 @@ from .data_structures import TextBlock
 from typing import List
 
 class PDFParser:
-    """Parses a PDF file and extracts text blocks."""
-
     def parse(self, pdf_path: str) -> List[TextBlock]:
-        """
-        Extracts text blocks from each page of a PDF.
-
-        Args:
-            pdf_path: The path to the PDF file.
-
-        Returns:
-            A list of TextBlock objects.
-        """
         doc = fitz.open(pdf_path)
         blocks = []
         for page_num, page in enumerate(doc):

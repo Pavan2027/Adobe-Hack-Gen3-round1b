@@ -3,8 +3,6 @@ from typing import List
 from .data_structures import TextBlock
 
 class FeatureExtractor:
-    """Extracts features from text blocks."""
-
     def extract_features(self, text_blocks: List[TextBlock]) -> pd.DataFrame:
         """
         Converts a list of TextBlock objects into a pandas DataFrame with features.

@@ -1,0 +1,75 @@
+{
+    "metadata": {
+        "input_documents": [
+            "South of France - Cities.pdf",
+            "South of France - Cuisine.pdf",
+            "South of France - History.pdf",
+            "South of France - Restaurants and Hotels.pdf",
+            "South of France - Things to Do.pdf",
+            "South of France - Tips and Tricks.pdf",
+            "South of France - Traditions and Culture.pdf"
+        ],
+        "persona": "Travel Planner",
+        "job_to_be_done": "Plan a trip of 4 days for a group of 10 college friends.",
+        "processing_timestamp": "2025-07-27T15:58:54.739067"
+    },
+    "extracted_sections": [
+        {
+            "document": "South of France - Tips and Tricks.pdf",
+            "section_title": "Packing for a trip to the South of France involves considering the season, planned activities,",
+            "importance_rank": 3,
+            "page_number": 0
+        },
+        {
+            "document": "South of France - Cities.pdf",
+            "section_title": "Travel Tips",
+            "importance_rank": 2,
+            "page_number": 0
+        },
+        {
+            "document": "South of France - Cities.pdf",
+            "section_title": "Boat Trip to the Calanques",
+            "importance_rank": 2,
+            "page_number": 0
+        },
+        {
+            "document": "South of France - History.pdf",
+            "section_title": "points of interest to help you plan an enriching and unforgettable trip.",
+            "importance_rank": 2,
+            "page_number": 0
+        },
+        {
+            "document": "South of France - Things to Do.pdf",
+            "section_title": "Ultimate Guide to Activities and Things to Do in the South of France",
+            "importance_rank": 2,
+            "page_number": 0
+        }
+    ],
+    "subsection_analysis": [
+        {
+            "refined_text": "Packing for a trip to the South of France involves considering the season, planned activities,",
+            "page_number": 0,
+            "document": "South of France - Tips and Tricks.pdf"
+        },
+        {
+            "refined_text": "Travel Tips",
+            "page_number": 0,
+            "document": "South of France - Cities.pdf"
+        },
+        {
+            "refined_text": "Boat Trip to the Calanques",
+            "page_number": 0,
+            "document": "South of France - Cities.pdf"
+        },
+        {
+            "refined_text": "points of interest to help you plan an enriching and unforgettable trip.",
+            "page_number": 0,
+            "document": "South of France - History.pdf"
+        },
+        {
+            "refined_text": "Ultimate Guide to Activities and Things to Do in the South of France",
+            "page_number": 0,
+            "document": "South of France - Things to Do.pdf"
+        }
+    ]
+}

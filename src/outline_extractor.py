@@ -23,7 +23,8 @@ class OutlineExtractor:
                             if span.get("text", "").strip():
                                 spans.append(span)
             
-            if not spans: continue
+            if not spans:
+                continue
             spans.sort(key=lambda s: (s['bbox'][1], s['bbox'][0]))
 
             grouped_lines_spans = []
@@ -31,7 +32,7 @@ class OutlineExtractor:
                 current_line = [spans[0]]
                 for i in range(1, len(spans)):
                     prev_span, current_span = current_line[-1], spans[i]
-                    if abs(((prev_span['bbox'][1] + prev_span['bbox'][3]) / 2) - \
+                    if abs(((prev_span['bbox'][1] + prev_span['bbox'][3]) / 2) - 
                            ((current_span['bbox'][1] + current_span['bbox'][3]) / 2)) < 2:
                         current_line.append(current_span)
                     else:
@@ -49,7 +50,8 @@ class OutlineExtractor:
     def _get_line_properties(self, spans: list, page_num: int, page_height: float):
         """Consolidates properties for a line from its constituent spans."""
         text = " ".join(s['text'] for s in spans).strip()
-        if not text: return None
+        if not text:
+            return None
 
         bbox = fitz.Rect(spans[0]['bbox'])
         for s in spans[1:]:
@@ -64,7 +66,7 @@ class OutlineExtractor:
             "page_num": page_num,
             "font_size": statistics.mode(font_sizes) if font_sizes else 0,
             "font_name": statistics.mode(font_names) if font_names else "",
-            "is_bold": "bold" in (statistics.mode(font_names) if font_names else "").lower() or \
+            "is_bold": "bold" in (statistics.mode(font_names) if font_names else "").lower() or 
                        "black" in (statistics.mode(font_names) if font_names else "").lower(),
             "is_header_footer": bbox.y0 < page_height * 0.1 or bbox.y1 > page_height * 0.92
         }
@@ -79,16 +81,17 @@ class OutlineExtractor:
         if doc.page_count > 50:
             print(f"ERROR: Document has {doc.page_count} pages, which exceeds the 50-page limit. Aborting.")
             return None, None
-        
+
         all_lines = self._get_all_lines(doc)
-        if not all_lines: return "Untitled Document", []
+        if not all_lines:
+            return "Untitled Document", []
 
         # Find Title
         first_page_lines = [line for line in all_lines if line['page_num'] == 0 and not line['is_header_footer']]
         title_text = "Untitled Document"
         title_lines = []
         if first_page_lines:
-            max_font_size = max(line['font_size'] for line in first_page_lines) if first_page_lines else 0
+            max_font_size = max(line['font_size'] for line in first_page_lines)
             title_lines = [line for line in first_page_lines if line['font_size'] >= max_font_size * 0.9]
             title_text = " ".join(line['text'] for line in sorted(title_lines, key=lambda l: l['bbox'][1]))
 
@@ -105,24 +108,26 @@ class OutlineExtractor:
 
             size_ratio = line['font_size'] / median_font_size if median_font_size > 0 else 1
             is_numbered = numbering_pattern.match(line['text'])
-            
-            # A line is a heading candidate if it's bold, numbered, or significantly larger
+
             if line['is_bold'] or is_numbered or size_ratio > 1.2:
                 headings.append(line)
 
         # Merge multi-line headings
         merged_headings = []
+        print(f"[DEBUG] Total merged headings found: {len(merged_headings)}")
+        for h in merged_headings:
+            print(f"  - Heading: '{h['text'][:50]}' on page {h['page_num']} with font size {h['font_size']}")
+
+
         i = 0
         while i < len(headings):
             current_heading = headings[i].copy()
             j = i + 1
-            # Look ahead to merge
             while j < len(headings):
                 next_heading = headings[j]
-                # If next line is stylistically similar and very close vertically, merge it
                 if (abs(next_heading['font_size'] - current_heading['font_size']) < 1 and
-                    next_heading['is_bold'] == current_heading['is_bold'] and
-                    (next_heading['bbox'][1] - current_heading['bbox'][3]) < current_heading['font_size'] * 0.5):
+                        next_heading['is_bold'] == current_heading['is_bold'] and
+                        (next_heading['bbox'][1] - current_heading['bbox'][3]) < current_heading['font_size'] * 0.5):
                     current_heading['text'] += " " + next_heading['text']
                     current_heading['bbox'] = tuple(fitz.Rect(current_heading['bbox']).include_rect(next_heading['bbox']))
                     j += 1
@@ -130,16 +135,18 @@ class OutlineExtractor:
                     break
             merged_headings.append(current_heading)
             i = j
-            
-        if not merged_headings: return title_text, []
+
+        if not merged_headings:
+            return title_text, []
 
         # Cluster headings by style to assign levels
         styles = {}
         for h in merged_headings:
             style_key = (round(h["font_size"]), h["is_bold"])
-            if style_key not in styles: styles[style_key] = []
+            if style_key not in styles:
+                styles[style_key] = []
             styles[style_key].append(h)
-        
+
         sorted_styles = sorted(styles.keys(), key=lambda x: (x[0], x[1]), reverse=True)
         level_map = {style: i + 1 for i, style in enumerate(sorted_styles)}
 
@@ -147,4 +154,42 @@ class OutlineExtractor:
             style_key = (round(h["font_size"]), h["is_bold"])
             h['level'] = level_map.get(style_key, 99)
 
-        return title_text, [h for h in merged_headings if h['level'] <= 5]
+        # 🔽 Add content under each heading
+        sections = []
+        num_headings = len(merged_headings)
+
+        for i in range(num_headings):
+            heading = merged_headings[i]
+            start_page = heading["page_num"]
+            start_y = heading["bbox"][3]
+
+            if i + 1 < num_headings:
+                next_heading = merged_headings[i + 1]
+                end_page = next_heading["page_num"]
+                end_y = next_heading["bbox"][1]
+            else:
+                end_page = all_lines[-1]["page_num"]
+                end_y = float("inf")
+
+            section_lines = [
+                line for line in all_lines
+                if not line['is_header_footer'] and (
+                    (line["page_num"] > start_page and line["page_num"] < end_page) or
+                    (line["page_num"] == start_page and line["bbox"][1] > start_y) or
+                    (line["page_num"] == end_page and line["bbox"][1] < end_y)
+                )
+            ]
+
+            section_text = " ".join(
+                line["text"].strip() for line in sorted(section_lines, key=lambda l: (l["page_num"], l["bbox"][1]))
+                if line.get("text", "").strip()
+            )
+            
+            print(f"[DEBUG] Heading: '{heading['text'][:40]}...' -> Extracted content sample: '{section_text[:100]}...'")
+            
+            heading["content"] = section_text.strip()
+            sections.append(heading)
+            print(f"[INFO] Extracted content for '{heading['text'][:30]}...': {section_text[:100]}...")
+
+
+        return title_text, [h for h in sections if h['level'] <= 5]

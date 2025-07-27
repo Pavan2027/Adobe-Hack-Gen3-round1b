@@ -13,13 +13,11 @@ class HeadingDetector:
         Returns:
             A DataFrame with an added 'is_heading' and 'heading_level' column.
         """
-        # Rule 1: Identify potential headings based on font size
-        font_size_threshold = features_df['font_size'].quantile(0.90)  # Top 10% font sizes
+        font_size_threshold = features_df['font_size'].quantile(0.90) 
         features_df['is_heading'] = (features_df['font_size'] >= font_size_threshold) & \
                                      (features_df['word_count'] < 20) & \
                                      (~features_df['ends_with_period'])
 
-        # Rule 2: Determine heading levels based on font size
         headings = features_df[features_df['is_heading']].copy()
         unique_font_sizes = sorted(headings['font_size'].unique(), reverse=True)
         size_to_level = {size: i + 1 for i, size in enumerate(unique_font_sizes)}

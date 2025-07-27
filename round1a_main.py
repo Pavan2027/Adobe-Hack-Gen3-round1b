@@ -11,11 +11,8 @@ def main():
     args = parser.parse_args()
 
     extractor = OutlineExtractor()
-    # The extractor now returns a tuple: (document_title, list_of_headings)
-    # or (None, None) if there's an error.
     title, headings = extractor.extract_outline(args.pdf_path)
 
-    # If the extractor returned None, it means an error occurred (e.g., page limit).
     if title is None and headings is None:
         return # Stop execution, error was already printed.
 
