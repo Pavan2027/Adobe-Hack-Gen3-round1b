@@ -69,20 +69,18 @@ def analyze_subsections(sections: List[Dict]) -> List[Dict]:
 
 def main():
     # Define paths
-    collection_path = "Challenge_1b/Collection 1"
+    collection_path = "collections"
     input_json_path = os.path.join(collection_path, "challenge1b_input.json")
-    pdf_dir = os.path.join(collection_path, "PDFs")
     output_json_path = os.path.join(collection_path, "challenge1b_output.json")
 
     # Load input data
     input_data = load_input_json(input_json_path)
     
-    # --- FIX: Correctly access keys based on the likely input file structure ---
+    # Correctly access keys based on the likely input file structure
     documents_data = input_data.get("documents", [])
     documents = [doc["filename"] for doc in documents_data if "filename" in doc]
     persona = input_data.get("persona", {}).get("role", "No Persona")
     job = input_data.get("job_to_be_done", {}).get("task", "No Job")
-    # --- END FIX ---
 
     # Instantiate the extractor
     extractor = OutlineExtractor()
@@ -90,7 +88,8 @@ def main():
 
     print("--- Starting PDF Processing with OutlineExtractor ---")
     for doc_filename in documents:
-        file_path = os.path.join(pdf_dir, doc_filename)
+        # FIX: The line below now correctly uses 'collection_path'
+        file_path = os.path.join(collection_path, doc_filename)
         if not os.path.exists(file_path):
             print(f"⚠️  Warning: File not found, skipping: {file_path}")
             continue
