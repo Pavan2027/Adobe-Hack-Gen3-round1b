@@ -11,66 +11,6 @@ class OutlineExtractor:
     designed for high precision and accurate multi-line heading detection.
     """
 
-    def _get_all_lines(self, doc: fitz.Document):
-        """Extracts and groups all text into consolidated lines for the entire document."""
-        all_lines = []
-        for page_num, page in enumerate(doc):
-            spans = []
-            for block in page.get_text("dict").get("blocks", []):
-                if "lines" in block:
-                    for line in block["lines"]:
-                        for span in line["spans"]:
-                            if span.get("text", "").strip():
-                                spans.append(span)
-            
-            if not spans:
-                continue
-            spans.sort(key=lambda s: (s['bbox'][1], s['bbox'][0]))
-
-            grouped_lines_spans = []
-            if spans:
-                current_line = [spans[0]]
-                for i in range(1, len(spans)):
-                    prev_span, current_span = current_line[-1], spans[i]
-                    if abs(((prev_span['bbox'][1] + prev_span['bbox'][3]) / 2) - 
-                           ((current_span['bbox'][1] + current_span['bbox'][3]) / 2)) < 2:
-                        current_line.append(current_span)
-                    else:
-                        grouped_lines_spans.append(sorted(current_line, key=lambda s: s['bbox'][0]))
-                        current_line = [current_span]
-                grouped_lines_spans.append(sorted(current_line, key=lambda s: s['bbox'][0]))
-
-            page_height = page.rect.height
-            for line_spans in grouped_lines_spans:
-                line_props = self._get_line_properties(line_spans, page_num, page_height)
-                if line_props:
-                    all_lines.append(line_props)
-        return all_lines
-
-    def _get_line_properties(self, spans: list, page_num: int, page_height: float):
-        """Consolidates properties for a line from its constituent spans."""
-        text = " ".join(s['text'] for s in spans).strip()
-        if not text:
-            return None
-
-        bbox = fitz.Rect(spans[0]['bbox'])
-        for s in spans[1:]:
-            bbox.include_rect(s['bbox'])
-        
-        font_sizes = [s['size'] for s in spans]
-        font_names = [s['font'] for s in spans]
-        
-        return {
-            "text": text,
-            "bbox": tuple(bbox),
-            "page_num": page_num,
-            "font_size": statistics.mode(font_sizes) if font_sizes else 0,
-            "font_name": statistics.mode(font_names) if font_names else "",
-            "is_bold": "bold" in (statistics.mode(font_names) if font_names else "").lower() or 
-                       "black" in (statistics.mode(font_names) if font_names else "").lower(),
-            "is_header_footer": bbox.y0 < page_height * 0.1 or bbox.y1 > page_height * 0.92
-        }
-
     def extract_outline(self, pdf_path: str):
         try:
             doc = fitz.open(pdf_path)
@@ -91,9 +31,12 @@ class OutlineExtractor:
         title_text = "Untitled Document"
         title_lines = []
         if first_page_lines:
-            max_font_size = max(line['font_size'] for line in first_page_lines)
-            title_lines = [line for line in first_page_lines if line['font_size'] >= max_font_size * 0.9]
-            title_text = " ".join(line['text'] for line in sorted(title_lines, key=lambda l: l['bbox'][1]))
+            # Avoid error on pages with no text
+            font_sizes_on_page = [line['font_size'] for line in first_page_lines if line.get('font_size')]
+            if font_sizes_on_page:
+                max_font_size = max(font_sizes_on_page)
+                title_lines = [line for line in first_page_lines if line['font_size'] >= max_font_size * 0.9]
+                title_text = " ".join(line['text'] for line in sorted(title_lines, key=lambda l: l['bbox'][1]))
 
         # Calculate median font size for body text
         font_sizes = [line['font_size'] for line in all_lines if not line['is_header_footer'] and line not in title_lines]
@@ -114,17 +57,14 @@ class OutlineExtractor:
 
         # Merge multi-line headings
         merged_headings = []
-        print(f"[DEBUG] Total merged headings found: {len(merged_headings)}")
-        for h in merged_headings:
-            print(f"  - Heading: '{h['text'][:50]}' on page {h['page_num']} with font size {h['font_size']}")
-
-
         i = 0
+        # FIX 1: The merging logic now correctly populates the list before it's used.
         while i < len(headings):
             current_heading = headings[i].copy()
             j = i + 1
             while j < len(headings):
                 next_heading = headings[j]
+                # Check for proximity and similar style to merge lines into a single heading
                 if (abs(next_heading['font_size'] - current_heading['font_size']) < 1 and
                         next_heading['is_bold'] == current_heading['is_bold'] and
                         (next_heading['bbox'][1] - current_heading['bbox'][3]) < current_heading['font_size'] * 0.5):
@@ -135,6 +75,10 @@ class OutlineExtractor:
                     break
             merged_headings.append(current_heading)
             i = j
+        
+        print(f"[DEBUG] Total merged headings found: {len(merged_headings)}")
+        for h in merged_headings[:5]: # Print first 5 for brevity
+            print(f"  - Sample Heading: '{h['text'][:60]}' on page {h['page_num']}")
 
         if not merged_headings:
             return title_text, []
@@ -157,39 +101,49 @@ class OutlineExtractor:
         # 🔽 Add content under each heading
         sections = []
         num_headings = len(merged_headings)
+        
+        # Create a set of heading texts for faster lookup
+        heading_texts_set = {h['text'] for h in merged_headings}
 
         for i in range(num_headings):
             heading = merged_headings[i]
             start_page = heading["page_num"]
-            start_y = heading["bbox"][3]
+            start_y = heading["bbox"][3]  # Bottom of the current heading's box
 
+            # Determine the end boundary (the start of the next heading)
             if i + 1 < num_headings:
                 next_heading = merged_headings[i + 1]
                 end_page = next_heading["page_num"]
-                end_y = next_heading["bbox"][1]
+                end_y = next_heading["bbox"][1] # Top of the next heading's box
             else:
-                end_page = all_lines[-1]["page_num"]
-                end_y = float("inf")
+                end_page = doc.page_count -1 # Use the actual last page
+                end_y = float("inf") # Go to the end of the document
 
-            section_lines = [
-                line for line in all_lines
-                if not line['is_header_footer'] and (
-                    (line["page_num"] > start_page and line["page_num"] < end_page) or
-                    (line["page_num"] == start_page and line["bbox"][1] > start_y) or
-                    (line["page_num"] == end_page and line["bbox"][1] < end_y)
+            section_lines = []
+            for line in all_lines:
+                # Basic conditions: not a header/footer, and within the page/y-position boundaries
+                is_within_bounds = (
+                    not line['is_header_footer'] and (
+                        (line["page_num"] > start_page and line["page_num"] < end_page) or
+                        (line["page_num"] == start_page and line["bbox"][1] > start_y) or
+                        (line["page_num"] == end_page and line["bbox"][3] < end_y)
+                    )
                 )
-            ]
+                
+                # FIX 2: Ensure the line is not another heading.
+                if is_within_bounds and line['text'] not in heading_texts_set:
+                    section_lines.append(line)
 
             section_text = " ".join(
                 line["text"].strip() for line in sorted(section_lines, key=lambda l: (l["page_num"], l["bbox"][1]))
                 if line.get("text", "").strip()
             )
             
-            print(f"[DEBUG] Heading: '{heading['text'][:40]}...' -> Extracted content sample: '{section_text[:100]}...'")
-            
             heading["content"] = section_text.strip()
             sections.append(heading)
-            print(f"[INFO] Extracted content for '{heading['text'][:30]}...': {section_text[:100]}...")
-
-
-        return title_text, [h for h in sections if h['level'] <= 5]
+            
+        print(f"[INFO] Content extraction complete. Processed {len(sections)} sections.")
+        
+        # Final cleanup and return
+        doc.close()
+        return title_text, [h for h in sections if h.get('level', 99) <= 5 and h.get('content')]
